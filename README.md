@@ -15,35 +15,32 @@ The dataset is sourced from a Swiggy Order processing listing scraped from the a
 Each row represents a unique SKU (Stock Keeping Unit), with duplicate product names for different quantities, prices, or discounts, just like a live catalog.​
 
 
-🧱 1. Database & Table Creation: 
+🧱Database & Table Creation: 
 The project uses PostgreSQL with a single-core table Swiggy for SKUs.​
 
-📥 2. Data Import: 
+📥Data Import: 
 CSV is loaded via pgAdmin’s Import functionality or via \copy from psql.​
 
-🔍 3. Exploratory Data Analysis (EDA): 
-Typical EDA queries included:
+🔍Exploratory Data Analysis (EDA): 
+1. Total records, sample rows, and basic sanity checks.
+2. Null checks across price, quantity, and other columns.
+3. ProductName order-wise, OrderStatus-wise TotalPrice, TimeOfDay-wise TotalPrice.
+4. Detection of products with multiple SKUs.​
 
--Total records, sample rows, and basic sanity checks.
--Null checks across price, quantity, and other columns.
--ProductName order-wise, OrderStatus-wise TotalPrice, TimeOfDay-wise TotalPrice.
--Detection of products with multiple SKUs.​
-
-🧹 4. Data Cleaning: 
-Main cleaning steps:
---Products with Quantity and TotalPrice = 0
+🧹 4. Data Cleaning:  Main cleaning steps:
+1. Products with Quantity and TotalPrice = 0
 
 📊 5. Business Insight Queries
 Below are example query patterns matching the insights you described.
--- Q1. Find the top 10 best-value ProductName based on the DiscountApplied.
---Q2. Find the Top 20 best-value products based on the DiscountApplied above 20.
---Q3.Calculate Estimated Revenue for each ProductName
--- Q4. Find all ProductName where UnitPrice is greater than ₹300, and DiscountApplied is less than 1000.
--- Q5. Identify the top 5 ProductName offering the highest average DiscountApplied.
--- Q6. Find the price per Quantity for products above 5 and sort by best value.
---Q7.Group the ProductName into DeliveryTimeMinutes like Low, Medium, Slow.
---Q8.What is the Total Price Per PaymentMethodID 
---Q9.What is the Total Price Per TimeOfDay 
+Q1. Find the top 10 best-value ProductName based on the DiscountApplied.
+Q2. Find the Top 20 best-value products based on the DiscountApplied above 20.
+Q3. Calculate the Estimated Revenue for each ProductName
+Q4. Find all ProductName where UnitPrice is greater than ₹300, and DiscountApplied is less than 1000.
+Q5. Identify the top 5 ProductName offering the highest average DiscountApplied.
+Q6. Find the price per Quantity for products above 5 and sort by best value.
+Q7. Group the ProductName into DeliveryTimeMinutes like Low, Medium, Slow.
+Q8. What is the Total Price Per PaymentMethodID 
+Q9. What is the Total Price Per TimeOfDay 
 
 
 🧩 Tech Stack
