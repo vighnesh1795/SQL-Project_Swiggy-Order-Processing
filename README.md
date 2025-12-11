@@ -30,9 +30,9 @@ CSV is loaded via pgAdmin’s Import functionality or via \copy from psql.​
 🧹Data Cleaning:  Main cleaning steps:
 1. Products with Quantity and TotalPrice = 0
 
-📊 5. Business Insight Queries:
-
+📊 Business Insight Queries:
 Below are example query patterns matching the insights you described.
+
 Q1. Find the top 10 best-value ProductName based on the DiscountApplied. 
 
 Q2. Find the Top 20 best-value products based on the DiscountApplied above 20.
@@ -53,5 +53,5 @@ Q9. What is the Total Price Per TimeOfDay
 
 
 🧩 Tech Stack
--SQL (PostgreSQL) for querying and transformations.​
--pgAdmin for import, schema management, and running queries.​
+1. SQL (PostgreSQL) for querying and transformations.​
+2. pgAdmin for import, schema management, and running queries.​
