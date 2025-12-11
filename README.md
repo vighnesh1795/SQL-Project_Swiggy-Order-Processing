@@ -27,19 +27,28 @@ CSV is loaded via pgAdmin’s Import functionality or via \copy from psql.​
 3. ProductName order-wise, OrderStatus-wise TotalPrice, TimeOfDay-wise TotalPrice.
 4. Detection of products with multiple SKUs.​
 
-🧹 4. Data Cleaning:  Main cleaning steps:
+🧹Data Cleaning:  Main cleaning steps:
 1. Products with Quantity and TotalPrice = 0
 
-📊 5. Business Insight Queries
+📊 5. Business Insight Queries:
+
 Below are example query patterns matching the insights you described.
-Q1. Find the top 10 best-value ProductName based on the DiscountApplied.
+Q1. Find the top 10 best-value ProductName based on the DiscountApplied. 
+
 Q2. Find the Top 20 best-value products based on the DiscountApplied above 20.
+
 Q3. Calculate the Estimated Revenue for each ProductName
+
 Q4. Find all ProductName where UnitPrice is greater than ₹300, and DiscountApplied is less than 1000.
+
 Q5. Identify the top 5 ProductName offering the highest average DiscountApplied.
+
 Q6. Find the price per Quantity for products above 5 and sort by best value.
+
 Q7. Group the ProductName into DeliveryTimeMinutes like Low, Medium, Slow.
+
 Q8. What is the Total Price Per PaymentMethodID 
+
 Q9. What is the Total Price Per TimeOfDay 
 
 
