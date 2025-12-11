@@ -15,15 +15,13 @@ The dataset is sourced from a Swiggy Order processing listing scraped from the a
 Each row represents a unique SKU (Stock Keeping Unit), with duplicate product names for different quantities, prices, or discounts, just like a live catalog.​
 
 
-🧱 1. Database & Table Creation
-
+🧱 1. Database & Table Creation: 
 The project uses PostgreSQL with a single-core table Swiggy for SKUs.​
 
-📥 2. Data Import
-
+📥 2. Data Import: 
 CSV is loaded via pgAdmin’s Import functionality or via \copy from psql.​
 
-🔍 3. Exploratory Data Analysis (EDA)
+🔍 3. Exploratory Data Analysis (EDA): 
 Typical EDA queries included:
 
 -Total records, sample rows, and basic sanity checks.
@@ -31,7 +29,7 @@ Typical EDA queries included:
 -ProductName order-wise, OrderStatus-wise TotalPrice, TimeOfDay-wise TotalPrice.
 -Detection of products with multiple SKUs.​
 
-🧹 4. Data Cleaning
+🧹 4. Data Cleaning: 
 Main cleaning steps:
 --Products with Quantity and TotalPrice = 0
 
