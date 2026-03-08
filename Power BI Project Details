@@ -17,23 +17,23 @@ And help management:
 •	Increase revenue
 ________________________________________
 2️⃣Dataset Description
-Column	Description
-OrderID	Unique order number
-CustomerID	Unique customer ID
-ProductID	Unique product ID
-ProductName	Name of product
-StoreID	Store identifier
-DeliveryPartnerID	Delivery partner ID
-OrderDate	Date of order
-DeliveryDate	Delivery completion date
-UnitPrice	Price per item
-Quantity	Units ordered
-TotalPrice	UnitPrice × Quantity
-DiscountApplied	Discount amount
-DeliveryTimeMinutes	Time taken to deliver
-OrderStatus	Delivered / Pending / Cancelled
-PaymentMethodID	Payment method used
-TimeOfDay	Morning / Afternoon / Evening
+Column:	Description
+OrderID:	Unique order number
+CustomerID:	Unique customer ID
+ProductID:	Unique product ID
+ProductName:	Name of product
+StoreID:	Store identifier
+DeliveryPartnerID:	Delivery partner ID
+OrderDate:	Date of order
+DeliveryDate:	Delivery completion date
+UnitPrice:	Price per item
+Quantity:	Units ordered
+TotalPrice:	UnitPrice × Quantity
+DiscountApplied:	Discount amount
+DeliveryTimeMinutes:	Time taken to deliver
+OrderStatus:	Delivered / Pending / Cancelled
+PaymentMethodID:	Payment method used
+TimeOfDay:	Morning / Afternoon / Evening
 ________________________________________
 3️⃣ Data Cleaning in Power BI (Power Query)
 ✔ Convert Data Types
@@ -116,7 +116,7 @@ ________________________________________
 •	Values: Avg Delivery Time
 ________________________________________
 📊 Visual 2: Delivery Time by Time of Day
-•	Chart: Column Chart
+•	Chart: Pie Chart
 •	Axis: TimeOfDay
 •	Values: Avg Delivery Time
 ________________________________________
@@ -131,16 +131,7 @@ ________________________________________
 •	Y-Axis: Net Revenue
 •	Size: Quantity
 ________________________________________
-🖥️ Dashboard Page 3: Product & Customer Insights
-________________________________________
-📊 Top 10 Products by Revenue
-•	Bar Chart
-•	Filter → Top N (10)
-________________________________________
-📊 Quantity Sold by Product
-•	Bar Chart
-________________________________________
-📊 High Cancellation Products
+📊  Visual 5: High Cancellation Products
 •	Table:
 o	ProductName
 o	Total Orders
