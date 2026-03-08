@@ -1,0 +1,157 @@
+📊 Power BI Project: Retail Order & Delivery Performance Dashboard
+ Project Title
+Retail Sales & Delivery Performance Analysis Dashboard
+________________________________________
+1️⃣ Project Objective
+To analyze:
+•	Sales performance
+•	Product performance
+•	Order status trends
+•	Delivery efficiency
+•	Payment method usage
+•	Discount impact on revenue
+And help management:
+•	Improve delivery time
+•	Identify top-selling products
+•	Reduce cancellations
+•	Increase revenue
+________________________________________
+2️⃣Dataset Description
+Column	Description
+OrderID	Unique order number
+CustomerID	Unique customer ID
+ProductID	Unique product ID
+ProductName	Name of product
+StoreID	Store identifier
+DeliveryPartnerID	Delivery partner ID
+OrderDate	Date of order
+DeliveryDate	Delivery completion date
+UnitPrice	Price per item
+Quantity	Units ordered
+TotalPrice	UnitPrice × Quantity
+DiscountApplied	Discount amount
+DeliveryTimeMinutes	Time taken to deliver
+OrderStatus	Delivered / Pending / Cancelled
+PaymentMethodID	Payment method used
+TimeOfDay	Morning / Afternoon / Evening
+________________________________________
+3️⃣ Data Cleaning in Power BI (Power Query)
+✔ Convert Data Types
+•	OrderDate → Date
+•	DeliveryDate → Date
+•	UnitPrice → Decimal
+•	Quantity → Whole Number
+•	TotalPrice → Decimal
+•	DiscountApplied → Decimal
+•	DeliveryTimeMinutes → Whole Number
+✔ Create New Columns
+🔹 1. Net Revenue
+Net Revenue = TotalPrice - DiscountApplied
+🔹 2. Delivery Delay (if needed)
+Delivery Days = DATEDIFF(OrderDate, DeliveryDate, DAY)
+________________________________________
+4️⃣ DAX Measures (Important for Interview)
+📌 Total Revenue
+Total Revenue = SUM(order_transactions[TotalPrice])
+📌 Total Discount
+Total Discount = SUM(order_transactions[DiscountApplied])
+📌 Net Revenue
+Net Revenue = [Total Revenue] - [Total Discount]
+📌 Total Orders
+Total Orders = COUNT(order_transactions[OrderID])
+📌 Delivered Orders
+Delivered Orders = 
+CALCULATE(
+    COUNT(order_transactions[OrderID]),
+    order_transactions[OrderStatus] = "Delivered"
+)
+📌 Cancellation Rate
+Cancellation Rate = 
+DIVIDE(
+    CALCULATE(COUNT(order_transactions[OrderID]),
+    order_transactions[OrderStatus] = "Cancelled"),
+    [Total Orders]
+)
+📌 Average Delivery Time
+Avg Delivery Time = 
+AVERAGE(order_transactions[DeliveryTimeMinutes])
+________________________________________
+5️⃣ Dashboard Design (Step-by-Step Layout)
+________________________________________
+🖥️ Dashboard Page 1: Sales Overview
+🎯 KPI Cards (Top Section)
+•	Total Revenue
+•	Net Revenue
+•	Total Orders
+•	Cancellation Rate %
+•	Avg Delivery Time
+________________________________________
+📊 Visual 1: Revenue by Product
+•	Chart: Bar Chart
+•	Axis: ProductName
+•	Values: Net Revenue
+•	Insight: Identify top-selling products
+________________________________________
+📊 Visual 2: Orders by Order Status
+•	Chart: Donut Chart
+•	Legend: OrderStatus
+•	Values: Total Orders
+•	Insight: Delivery performance
+________________________________________
+📊 Visual 3: Revenue by Store
+•	Chart: Column Chart
+•	Axis: StoreID
+•	Values: Net Revenue
+________________________________________
+📊 Visual 4: Revenue Trend Over Time
+•	Chart: Line Chart
+•	Axis: OrderDate
+•	Values: Net Revenue
+________________________________________
+🖥️ Dashboard Page 2: Delivery & Operations Dashboard
+________________________________________
+📊 Visual 1: Average Delivery Time by Delivery Partner
+•	Chart: Bar Chart
+•	Axis: DeliveryPartnerID
+•	Values: Avg Delivery Time
+________________________________________
+📊 Visual 2: Delivery Time by Time of Day
+•	Chart: Column Chart
+•	Axis: TimeOfDay
+•	Values: Avg Delivery Time
+________________________________________
+📊 Visual 3: Orders by Payment Method
+•	Chart: Pie Chart
+•	Legend: PaymentMethodID
+•	Values: Total Orders
+________________________________________
+📊 Visual 4: Discount Impact Analysis
+•	Chart: Scatter Plot
+•	X-Axis: DiscountApplied
+•	Y-Axis: Net Revenue
+•	Size: Quantity
+________________________________________
+🖥️ Dashboard Page 3: Product & Customer Insights
+________________________________________
+📊 Top 10 Products by Revenue
+•	Bar Chart
+•	Filter → Top N (10)
+________________________________________
+📊 Quantity Sold by Product
+•	Bar Chart
+________________________________________
+📊 High Cancellation Products
+•	Table:
+o	ProductName
+o	Total Orders
+o	Cancelled Orders
+o	Cancellation %
+________________________________________
+7️⃣ Important Insights You Can Present
+You can say in an interview:
+•	🟢 Highest revenue product: (Example: Olive Oil 1L)
+•	🟢 Evening orders have longer delivery times.
+•	🔴 Some stores have a higher cancellation rate.
+•	🟢 Discount does not always increase revenue.
+•	🔴 Certain delivery partners have a high average delivery time.
+________________________________________
